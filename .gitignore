@@ -1,0 +1,6 @@
+.DS_Store
+**/.terraform
+# Lazily use local tfstate as this is a designed to be used for empheral style
+# vpn access. Ideally state should be committed encyrpted to an external state
+# bucket where it can not be easily edited.
+**/*.tfstate*
