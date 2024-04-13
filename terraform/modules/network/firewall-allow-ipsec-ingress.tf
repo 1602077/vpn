@@ -8,6 +8,5 @@ resource "google_compute_firewall" "allow_ipsec_ingress" {
   name          = "allow-ipsec-ingress"
   network       = "default"
   priority      = 999
-  project       = "vpn-000-419614"
   source_ranges = ["0.0.0.0/0"]
 }
