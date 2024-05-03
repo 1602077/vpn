@@ -8,6 +8,9 @@ GCP_VM_HOSTNAME=${GCP_VM_HOSTNAME:="vpn-001"}
 GCP_REGION=${GCP_REGION:="europe-west2"}
 GCP_ZONE=${GCP_ZONE:="europe-west2-c"}
 
+gcloud projects list
+echo ""
+
 # GCP_PROJECT_NAME is the only variable where a sensible default can not be
 # set: prompt from user.
 read -p "Enter gcp project name: " GCP_PROJECT_NAME
