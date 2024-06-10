@@ -21,7 +21,8 @@ echo -e "Available cities: ${(k)GCP_REGIONS}"
 
 # If no default region passed by environment variable prompt for input.
 if [[ -z $GCP_REGION ]]; then
-  vared -p "Enter a city: " -c GCP_REGION
+  vared -p "Enter a city: " -c CITY
+  GCP_REGION=${GCP_REGIONS[$CITY]}
 fi
 
 IPSEC_PSK=${IPSEC_PSK:=$RANDOM$RANDOM$RANDOM$RANDOM}

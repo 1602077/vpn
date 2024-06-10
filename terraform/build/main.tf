@@ -23,6 +23,7 @@ module "compute" {
   ipsec-password = var.ipsec-password
   ipsec-username = var.ipsec-username
   ipsec-psk      = var.ipsec-psk
+  region         = var.gcp_region
 }
 
 module "network" {
