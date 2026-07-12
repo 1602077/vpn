@@ -1,7 +1,10 @@
 #!/bin/zsh
 # runs terraform apply to deploy vm.
+set -e
 
 print-bold() {echo -e "\033[1m$@\033[0m"}
+
+gcloud auth application-default login
 
 CITIES=(London Berlin Oregon Paris Sydney Zurich)
 declare -A GCP_REGIONS
@@ -22,7 +25,7 @@ declare -a GCP_PROJECTS=($(gcloud projects list --format="value(projectId)"))
   for ((i=1; i<=${#GCP_PROJECTS[@]}; i++)); do echo "($i): ${GCP_PROJECTS[$i]}"; done
   vared -p "Choose a GCP Project: " -c PROJECT_ID
   GCP_PROJECT_NAME=$GCP_PROJECTS[$PROJECT_ID]
-
+  # gcloud auth application-default set-quota-project ${GCP_PROJECT_NAME}
 
   if [[ -z $GCP_REGION ]]; then
     echo ""
